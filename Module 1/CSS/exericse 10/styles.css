@@ -1,0 +1,147 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    background-image: url('background-pattern.png');
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#mainHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Event Card Styles */
+.event-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* CTA Button Styles */
+.cta-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Multi-column Text */
+.multi-column {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    #mainHeader {
+        font-size: 2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-menu li {
+        margin: 5px 0;
+    }
+    
+    .multi-column {
+        column-count: 1;
+    }
+    
+    .event-card {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #mainHeader {
+        font-size: 1.5rem;
+    }
+    
+    .cta-button {
+        display: block;
+        text-align: center;
+    }
+}

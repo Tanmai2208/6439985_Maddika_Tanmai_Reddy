@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Local Files Example</title>
+
+  <!-- Link to local Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+  <div class="container py-5">
+    <h2 class="mb-4">Local Bootstrap Setup</h2>
+
+    <div class="alert alert-warning" role="alert">
+      You are using Bootstrap 5 from downloaded files!
+    </div>
+
+    <form>
+      <div class="mb-3">
+        <label for="userEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="userEmail" placeholder="name@example.com" />
+      </div>
+      <div class="mb-3">
+        <label for="userMessage" class="form-label">Message</label>
+        <textarea class="form-control" id="userMessage" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Link to local Bootstrap JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

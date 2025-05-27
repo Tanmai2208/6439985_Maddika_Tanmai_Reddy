@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Preferences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            padding: 8px 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Save Your Event Preferences</h1>
+    
+    <form id="preferencesForm">
+        <label for="eventType">Preferred Event Type:</label>
+        <select id="eventType" name="eventType">
+            <option value="workshop">Workshop</option>
+            <option value="concert">Concert</option>
+            <option value="sports">Sports</option>
+            <option value="fair">Community Fair</option>
+        </select>
+        
+        <button type="button" onclick="savePreferences()">Save Preferences</button>
+        <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+    </form>
+    
+    <div id="statusMessage"></div>
+    
+    <script>
+        // Load saved preferences when page loads
+        window.onload = function() {
+            const savedEventType = localStorage.getItem('preferredEventType');
+            if (savedEventType) {
+                document.getElementById('eventType').value = savedEventType;
+                document.getElementById('statusMessage').textContent = 
+                    'Your saved preference has been loaded.';
+            }
+        };
+        
+        function savePreferences() {
+            const eventType = document.getElementById('eventType').value;
+            localStorage.setItem('preferredEventType', eventType);
+            sessionStorage.setItem('lastSaved', new Date().toLocaleString());
+            
+            document.getElementById('statusMessage').textContent = 
+                `Preferences saved! (${new Date().toLocaleString()})`;
+        }
+        
+        function clearPreferences() {
+            localStorage.removeItem('preferredEventType');
+            sessionStorage.clear();
+            document.getElementById('eventType').value = 'workshop';
+            document.getElementById('statusMessage').textContent = 
+                'All preferences have been cleared.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+Set up Bootstrap 5 with Sass using npm
+Step-by-step setup:
+Initialize npm project
+
+bash
+Copy code
+mkdir bootstrap-sass-project
+cd bootstrap-sass-project
+npm init -y
+Install Bootstrap and Sass
+
+bash
+Copy code
+npm install bootstrap@5 sass
+Create project structure
+
+pgsql
+Copy code
+bootstrap-sass-project/
+├── node_modules/
+├── package.json
+├── scss/
+│   ├── custom.scss
+├── index.html
+Create scss/custom.scss to import Bootstrap source
+
+scss
+Copy code
+// custom.scss
+// Import Bootstrap's source Sass files
+@import "../node_modules/bootstrap/scss/bootstrap";
+Create index.html file
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap 5 Sass Setup</title>
+  <link href="dist/custom.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-primary">Bootstrap 5 with Sass</h1>
+    <button class="btn btn-primary">Primary Button</button>
+  </div>
+</body>
+</html>
+Compile Sass to CSS
+
+Add a script in package.json for convenience:
+
+json
+Copy code
+"scripts": {
+  "sass": "sass scss/custom.scss dist/custom.css --watch"
+}
+Create a folder dist/ where compiled CSS will go.
+
+Run:
+
+bash
+Copy code
+npm run sass
+This will compile custom.scss into dist/custom.css and watch for changes.

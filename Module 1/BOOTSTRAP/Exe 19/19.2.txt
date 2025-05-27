@@ -1,0 +1,17 @@
+Customize primary color and border-radius via _variables.scss
+Steps:
+Inside your scss/ folder, create _custom-variables.scss file.
+
+scss
+Copy code
+// _custom-variables.scss
+$primary: #ff6347;           // Change primary color to Tomato
+$border-radius: 1rem;        // Increase border-radius
+Modify custom.scss to import your variables before Bootstrap:
+
+scss
+Copy code
+// custom.scss
+@import "custom-variables";  // Your custom variables
+@import "../node_modules/bootstrap/scss/bootstrap";  // Bootstrap source
+Run the Sass compiler again (npm run sass) to generate CSS with your customizations.

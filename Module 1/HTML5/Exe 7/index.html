@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    #videoMessage {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function videoReady() {
+      document.getElementById("videoMessage").textContent = "Video ready to play";
+    }
+
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? You may lose unsaved data.";
+    };
+  </script>
+</head>
+<body>
+  <h2>Watch Our Event Promo</h2>
+  <iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/cpP-fCo8Dn4?si=lVZlzAG84AJ_IYBO" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+  <p id="videoMessage"></p>
+</body>
+</html>

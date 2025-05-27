@@ -1,0 +1,6 @@
+Use DevTools to inspect elements, scripts and layout
+ This is a practical, browser-based task.
+1. Open Chrome DevTools (F12)
+2. Use Console tab to test JS code.
+3. Use Elements tab to inspect layout.
+4. Use Network tab to ensure help.html or styles.css loads properly.

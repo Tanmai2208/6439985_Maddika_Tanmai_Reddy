@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Portal - Navigation</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Enhanced Navigation Styles */
+        nav {
+            background-color: #ffffff;
+            padding: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .logo span {
+            color: #4a90e2;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        nav a:hover {
+            background-color: #4a90e2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Active link indicator */
+        nav a.active {
+            background-color: #1e3c72;
+            color: white;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            scroll-margin-top: 80px; /* accounts for sticky nav */
+        }
+        
+        #home {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        #events {
+            background-color: #f1f8fe;
+        }
+        
+        #contact {
+            background-color: #ffffff;
+        }
+        
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c72;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72, #4a90e2);
+            border-radius: 2px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #1e3c72;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background-color: #4a90e2;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4a90e2;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0.5rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Community Event Portal</h1>
+        <p>Connecting neighbors through local events</p>
+    </header>
+    
+    <!-- Enhanced Navigation Section -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Community<span>Portal</span></div>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="help.html" target="_blank">Help Center</a></li>
+                <li><a href="https://www.localcommunity.gov" target="_blank" rel="noopener noreferrer">City Website</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to Our Community</h2>
+        <p>Our portal is designed to help you discover and participate in local events that bring our community together. Whether you're interested in cultural activities, educational workshops, or social gatherings, you'll find something that matches your interests.</p>
+        <p>Scroll down to explore upcoming events or jump directly to a specific section using the navigation above.</p>
+        <p>For immediate assistance, visit our <a href="help.html" target="_blank" style="color: #1e3c72; font-weight: bold;">Help Center</a>.</p>
+    </section>
+    
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <p>Here are the events happening in our community this month:</p>
+        <ul style="margin-left: 2rem; margin-top: 1rem;">
+            <li><strong>Community Cleanup Day</strong> - Saturday, June 10th</li>
+            <li><strong>Summer Concert Series</strong> - Every Friday in June</li>
+            <li><strong>Farmers Market</strong> - Sundays 9am-2pm</li>
+        </ul>
+        <p style="margin-top: 1.5rem;">Check back often as we're constantly adding new events!</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or suggestions? We'd love to hear from you!</p>
+        <div style="margin-top: 2rem; background-color: #f1f8fe; padding: 1.5rem; border-radius: 8px;">
+            <h3 style="color: #1e3c72; margin-bottom: 1rem;">Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:events@communityportal.org" style="color: #1e3c72;">events@communityportal.org</a></p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Community Center Drive, Your City</p>
+        </div>
+    </section>
+    
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+            <a href="help.html" target="_blank">Help</a>
+            <a href="privacy.html" target="_blank">Privacy Policy</a>
+        </div>
+        <p>&copy; 2023 Community Event Portal. All rights reserved.</p>
+        <p>Building stronger communities together.</p>
+    </footer>
+
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active class in navigation
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Smooth scroll to target
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

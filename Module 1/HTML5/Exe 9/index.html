@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #locationInfo, #eventsNearby {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Events Near You</h1>
+    
+    <button id="findEventsBtn">Find Nearby Events</button>
+    
+    <div id="locationInfo">
+        <p>Your location will appear here when you click the button above.</p>
+    </div>
+    
+    <div id="eventsNearby">
+        <h3>Nearby Events:</h3>
+        <p>Events will be listed here based on your location.</p>
+    </div>
+    
+    <script>
+        document.getElementById('findEventsBtn').addEventListener('click', function() {
+            const locationInfo = document.getElementById('locationInfo');
+            const eventsNearby = document.getElementById('eventsNearby');
+            
+            locationInfo.innerHTML = '<p>Detecting your location...</p>';
+            
+            if (!navigator.geolocation) {
+                locationInfo.innerHTML = '<p class="error">Geolocation is not supported by your browser.</p>';
+                return;
+            }
+            
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+            
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    
+                    locationInfo.innerHTML = `
+                        <p><strong>Your location:</strong></p>
+                        <p>Latitude: ${lat.toFixed(6)}</p>
+                        <p>Longitude: ${lng.toFixed(6)}</p>
+                        <p>Accuracy: ${position.coords.accuracy} meters</p>
+                    `;
+                    
+                    // In a real app, you would send these coordinates to a server
+                    // to find nearby events. For this demo, we'll simulate it.
+                    setTimeout(function() {
+                        eventsNearby.innerHTML = `
+                            <h3>Events Near You:</h3>
+                            <ul>
+                                <li>Community Fair - 1.2 km away</li>
+                                <li>Yoga in the Park - 0.8 km away</li>
+                                <li>Art Workshop - 2.1 km away</li>
+                            </ul>
+                            <p><em>Note: These are simulated results based on your location.</em></p>
+                        `;
+                    }, 1000);
+                },
+                function(error) {
+                    let errorMessage = "Error getting your location: ";
+                    switch(error.code) {
+                        case error.PERMISSION_DENIED:
+                            errorMessage += "You denied the request for geolocation.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            errorMessage += "Location information is unavailable.";
+                            break;
+                        case error.TIMEOUT:
+                            errorMessage += "The request to get location timed out.";
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            errorMessage += "An unknown error occurred.";
+                            break;
+                    }
+                    locationInfo.innerHTML = `<p class="error">${errorMessage}</p>`;
+                },
+                options
+            );
+        });
+    </script>
+</body>
+</html>

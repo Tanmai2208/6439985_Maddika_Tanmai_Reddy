@@ -1,0 +1,44 @@
+Explore the structure of the downloaded Bootstrap directory
+When you download Bootstrap (compiled version) from the official Bootstrap website, you'll get a folder with the following structure:
+
+📁 Bootstrap Folder Structure:
+arduino
+Copy code
+bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   └── bootstrap.min.css.map
+│
+├── js/
+│   ├── bootstrap.bundle.js
+│   ├── bootstrap.bundle.min.js
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+│
+└── icons/  (only if downloaded separately from https://icons.getbootstrap.com/)
+🗂️ Folder Purposes:
+1. css/ folder:
+Contains all compiled Bootstrap stylesheets.
+
+bootstrap.min.css – Minified version for production (smaller size).
+
+bootstrap.css – Full version with spacing and comments for development.
+
+.map files help browsers map minified code back to the original source when debugging.
+
+2. js/ folder:
+Contains Bootstrap JavaScript files.
+
+bootstrap.bundle.min.js – Includes Bootstrap’s JavaScript plugins + Popper.js (required for tooltips, dropdowns, modals).
+
+bootstrap.min.js – Only Bootstrap plugins (Popper must be included separately).
+
+✅ Use bootstrap.bundle.min.js if you want everything to work (recommended).
+
+3. icons/ folder:
+Not included in the main download.
+
+Must be downloaded from Bootstrap Icons.
+
+It contains SVG icons that can be used with Bootstrap components.

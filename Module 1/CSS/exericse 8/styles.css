@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  padding: 40px;
+}
+
+/* === Box Model: Event Card Styling === */
+.eventCard {
+  background-color: #ffffff;
+  border: 2px solid #3498db;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* === Outline Example for Form === */
+.form-section {
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  outline: 2px solid #27ae60; /* Green outline to indicate focus or selection */
+  border: none;
+  border-radius: 5px;
+}
+
+/* === Visibility vs Display === */
+.hidden-box {
+  visibility: hidden; /* Box still takes space */
+}
+
+.display-none-box {
+  display: none; /* Box removed from flow */
+}
